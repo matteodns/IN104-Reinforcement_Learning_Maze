@@ -39,6 +39,7 @@ void add_crumbs(){
      maze[start_row][start_col]= 's';
 }
 
+
 int main(){
    maze_make("maze.txt");
    init_visited();
@@ -51,4 +52,5 @@ int main(){
    maze_render();
    return 0;
 }
+
 
