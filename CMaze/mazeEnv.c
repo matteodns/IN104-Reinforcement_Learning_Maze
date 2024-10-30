@@ -81,20 +81,19 @@ void maze_reset(){
 }
 
 envOutput maze_step(action a){
-    int reward = 0;
+    signed int reward = 0;
     int done = 0;
     envOutput stepOut;
 
     if (a==up){
        state_row = max(0,state_row -1);
     }else if (a==down){
-       state_row = min(rows,state_row +1);
+       state_row = min(rows-1,state_row +1);
     }else if (a==right){
-       state_col = min(cols,state_col +1);
+       state_col = min(cols-1,state_col +1);
     }else if (a==left){
        state_col = max(0,state_col -1);
     }
-    
     if((state_row == goal_row) && (state_col == goal_col)){
        reward = 1;
        done   = 1;
@@ -103,7 +102,7 @@ envOutput maze_step(action a){
     stepOut.reward = reward;
     stepOut.done   = done;
     stepOut.new_col = state_col;
-    stepOut.new_row = state_row; 
+    stepOut.new_row = state_row;
 
    return stepOut;
 }

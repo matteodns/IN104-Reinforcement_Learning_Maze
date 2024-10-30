@@ -1,0 +1,12 @@
+*.o
+*.h.gch
+a.out
+code.c
+codesarsa.c
+dfs.c
+makefile
+morpionEnv.c
+morpionEnv.h
+prog
+.DS_Store
+**/_MACOSX
